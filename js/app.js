@@ -12,11 +12,13 @@ var React = require('react'),
 React.render((
     <Router history={hashHistory}>
         <Route path="/" component={ProfileApp}>
+
             <IndexRoute component={ProfileView}/>
 
             <Route path="edit" component={ProfileEdit}/>
 
             <Route path="*" component={PageNotFound}/>
+
         </Route>
     </Router>
 ), document.getElementById('profileApp'));

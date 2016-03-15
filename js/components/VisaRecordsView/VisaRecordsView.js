@@ -1,5 +1,5 @@
 var React = require('react'),
-    VisaRecordsItemView = require('./VisaRecordsItemView');
+    VisaRecordsItemView = require('./../VisaRecordsItemView/VisaRecordsItemView');
 
 module.exports = React.createClass({
 

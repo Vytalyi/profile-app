@@ -1,8 +1,8 @@
 var React = require('react'),
-    PersonalInfoEdit = require('./../PersonalInfo/PersonalInfoEdit'),
+    PersonalInfoEdit = require('./../PersonalInfoEdit/PersonalInfoEdit'),
     ProfileStore = require('../../stores/ProfileStore'),
     ProfileActions = require('../../actions/ProfileActions'),
-    VisaRecordsEdit = require('./../VisaRecords/VisaRecordsEdit'),
+    VisaRecordsEdit = require('./../VisaRecordsEdit/VisaRecordsEdit'),
     Link = require('react-router').Link;
 
 var ProfileApp = React.createClass({

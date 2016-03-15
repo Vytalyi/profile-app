@@ -1,5 +1,5 @@
 var React = require('react'),
-    VisaRecordsItemEdit = require('./VisaRecordsItemEdit');
+    VisaRecordsItemEdit = require('./../VisaRecordsItemEdit/VisaRecordsItemEdit');
 
 module.exports = React.createClass({
 

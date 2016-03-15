@@ -1,7 +1,7 @@
 var React = require('react'),
     ProfileStore = require('../stores/ProfileStore'),
-    PersonalInfoEdit = require('../components/PersonalInfo/PersonalInfoEdit'),
-    VisaRecordsEdit = require('../components/VisaRecords/VisaRecordsEdit'),
+    PersonalInfoEdit = require('../components/PersonalInfoEdit/PersonalInfoEdit'),
+    VisaRecordsEdit = require('../components/VisaRecordsEdit/VisaRecordsEdit'),
     ProfileActions = require('../actions/ProfileActions');
 
 module.exports = React.createClass({
