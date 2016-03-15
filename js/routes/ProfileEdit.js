@@ -12,6 +12,14 @@ module.exports = React.createClass({
         return ProfileStore.getData();
     },
 
+    componentDidMount: function () {
+        ProfileStore.addChangeListener(this._onChange);
+    },
+
+    componentWillUnmount: function () {
+        ProfileStore.removeChangeListener(this._onChange);
+    },
+
     getData: function () {
         return {
             personalInfo: this.refs.personalInfo.getData(),
@@ -45,6 +53,11 @@ module.exports = React.createClass({
 
         // trigger saving action
         ProfileActions.saveProfileInfo(this.getData());
+    },
+
+    // update state once ProfileStore has been changed
+    _onChange: function () {
+        this.setState(ProfileStore.getData());
     }
 
 });

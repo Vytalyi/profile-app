@@ -1,6 +1,6 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher'),
     EventEmitter = require('events').EventEmitter,
-    ProfileConstants = require('../constants/ProfileConstants'),
+    ActionTypes = require('../constants/ActionTypes'),
     assign = require('object-assign');
 
 // todo... fetch data from server
@@ -20,12 +20,26 @@ var _data = {
 
 // todo... save data to server
 function save(data) {
+    _data = data;
     console.log("hook :: ProfileStore.save", data);
 }
 
 var ProfileStore = assign({}, EventEmitter.prototype, {
+
     getData: function () {
         return _data;
+    },
+
+    emitChange: function () {
+        this.emit("change");
+    },
+
+    addChangeListener: function (callback) {
+        this.on("change", callback);
+    },
+
+    removeChangeListener: function (callback) {
+        this.removeListener("change", callback);
     }
 });
 
@@ -33,8 +47,9 @@ var ProfileStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function (action) {
 
     switch (action.actionType) {
-        case ProfileConstants.PROFILE_SAVEINFO:
+        case ActionTypes.PROFILE_SAVEINFO:
             save(action.data);
+            ProfileStore.emitChange();
             break;
     }
 

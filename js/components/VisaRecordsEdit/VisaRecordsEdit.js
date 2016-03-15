@@ -26,11 +26,11 @@ module.exports = React.createClass({
     getData: function () {
         console.log("hook :: visaRecordsEdit.getData");
 
-        var rtnData = [];
+        var rtnData = {items: []};
 
         for (var p in this.refs) {
             if (this.refs.hasOwnProperty(p)) {
-                rtnData.push(this.refs[p].getData());
+                rtnData.items.push(this.refs[p].getData());
             }
         }
 

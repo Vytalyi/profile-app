@@ -11,6 +11,14 @@ module.exports = React.createClass({
         return ProfileStore.getData();
     },
 
+    componentDidMount: function () {
+        ProfileStore.addChangeListener(this._onChange);
+    },
+
+    componentWillUnmount: function () {
+        ProfileStore.removeChangeListener(this._onChange);
+    },
+
     render: function () {
         console.log("hook :: ProfileView.render");
 
@@ -24,6 +32,12 @@ module.exports = React.createClass({
                 />
             </div>
         );
+    },
+
+    // update state once ProfileStore has been changed
+    _onChange: function () {
+        this.setState(ProfileStore.getData());
     }
+
 
 });

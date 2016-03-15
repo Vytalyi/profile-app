@@ -1,5 +1,6 @@
 var React = require('react'),
-    VisaRecordsItemView = require('./../VisaRecordsItemView/VisaRecordsItemView');
+    VisaRecordsItemView = require('./../VisaRecordsItemView/VisaRecordsItemView'),
+    ProfileStore = require('../../stores/ProfileStore');
 
 module.exports = React.createClass({
 
@@ -7,19 +8,11 @@ module.exports = React.createClass({
         visaRecordsData: React.PropTypes.object.isRequired
     },
 
-    getInitialState: function () {
-        return {
-            items: this.props.visaRecordsData.items
-        }
-    },
-
     createRow: function () {
-        this.setState({
-            items: this.state.items.concat({
-                country: "",
-                start: "",
-                end: ""
-            })
+        this.props.visaRecordsData.items.concat({
+            country: "",
+            start: "",
+            end: ""
         });
     },
 
@@ -51,7 +44,7 @@ module.exports = React.createClass({
     },
 
     renderVisaRecords: function () {
-        return this.state.items.map(function (item, i) {
+        return this.props.visaRecordsData.items.map(function (item, i) {
             return (
                 <VisaRecordsItemView ref={'visaRecordsItem' + i} key={i}
                     visaRecordsItemData={item}

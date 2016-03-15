@@ -1,7 +1,4 @@
-var React = require('react'),
-    ProfileStore = require('../stores/ProfileStore'),
-    PersonalInfoView = require('../components/PersonalInfoView/PersonalInfoView'),
-    VisaRecordsView = require('../components/VisaRecordsView/VisaRecordsView');
+var React = require('react');
 
 module.exports = React.createClass({
 
@@ -9,9 +6,7 @@ module.exports = React.createClass({
         console.log("hook :: NotFound.render");
 
         return (
-            <h1>
-                Page Not Found
-            </h1>
+            <h1>Page Not Found</h1>
         );
     }
 
