@@ -7,8 +7,6 @@ module.exports = React.createClass({
     },
 
     render: function () {
-        console.log("hook :: visaRecordsItemView.render");
-
         return (
             <li>
                 {this.props.visaRecordsItemData.country},

@@ -7,8 +7,6 @@ var React = require('react'),
 module.exports = React.createClass({
 
     getInitialState: function () {
-        console.log("hook :: ProfileEdit.getInitialState");
-
         return ProfileStore.getData();
     },
 
@@ -28,8 +26,6 @@ module.exports = React.createClass({
     },
 
     render: function () {
-        console.log("hook :: ProfileEdit.render");
-
         return (
             <div>
                 <PersonalInfoEdit
@@ -49,7 +45,6 @@ module.exports = React.createClass({
     },
 
     _onSave: function (e) {
-        console.log("hook :: ProfileEdit._onSave");
 
         // trigger saving action
         ProfileActions.saveProfileInfo(this.getData());

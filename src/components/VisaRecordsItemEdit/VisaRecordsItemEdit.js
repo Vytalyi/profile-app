@@ -7,8 +7,6 @@ var VisaRecordsitemEdit = React.createClass({
     },
 
     getData: function () {
-        console.log("hook :: visaRecordsItemEdit.getData");
-
         return {
             country: this.refs.country.getDOMNode().value,
             start: this.refs.start.getDOMNode().value,
@@ -17,8 +15,6 @@ var VisaRecordsitemEdit = React.createClass({
     },
 
     render: function () {
-        console.log("hook :: visaRecordsItemEdit.render");
-
         return (
             <li>
                 <input ref="country"
@@ -41,8 +37,6 @@ var VisaRecordsitemEdit = React.createClass({
     },
 
     _onChange: function (e) {
-        console.log("hook :: visaRecordsItemEdit._onChange");
-
         this.setState({value: e.target.value});
     }
 

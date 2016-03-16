@@ -4,8 +4,6 @@ var React = require('react'),
 var ProfileApp = React.createClass({
 
     render: function () {
-        console.log("hook :: profileApp.render");
-
         return (
             <div>
                 <nav className="navigation">

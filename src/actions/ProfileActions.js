@@ -1,16 +1,14 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher'),
-    ProfileConstants = require('../constants/ProfileConstants');
+    ActionTypes = require('../constants/ActionTypes');
 
-var ProfileActions = {
+module.exports = {
 
     // save Profile to server
     saveProfileInfo: function (data) {
         AppDispatcher.dispatch({
-            actionType: ProfileConstants.PROFILE_SAVEINFO,
+            actionType: ActionTypes.PROFILE_SAVEINFO,
             data: data
         });
     }
 
 };
-
-module.exports = ProfileActions;

@@ -1,5 +1,5 @@
 var React = require('react'),
-    VisaRecordsItemView = require('./../VisaRecordsItemView/VisaRecordsItemView'),
+    VisaRecordsItemView = require('../../components/VisaRecordsItemView/VisaRecordsItemView'),
     ProfileStore = require('../../stores/ProfileStore');
 
 module.exports = React.createClass({
@@ -17,8 +17,6 @@ module.exports = React.createClass({
     },
 
     getData: function () {
-        console.log("hook :: visaRecordsView.getData");
-
         var rtnData = [];
 
         for (var p in this.refs) {
@@ -31,8 +29,6 @@ module.exports = React.createClass({
     },
 
     render: function () {
-        console.log("hook :: visaRecordsView.render");
-
         return (
             <section className="profile-section-visa">
                 <h2>Visa Records</h2>

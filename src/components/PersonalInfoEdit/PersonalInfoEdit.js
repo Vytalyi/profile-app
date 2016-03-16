@@ -7,8 +7,6 @@ module.exports = React.createClass({
     },
 
     getData: function () {
-        console.log("hook :: personalInfoEdit.getData");
-
         return {
             nativeName: this.refs.nativeName.getDOMNode().value,
             gender: this.refs.gender.getDOMNode().value,
@@ -17,8 +15,6 @@ module.exports = React.createClass({
     },
 
     render: function () {
-        console.log("hook :: personalInfoEdit.render");
-
         return (
             <section className="profile-section-personal">
                 <h2>Personal Info</h2>
@@ -53,8 +49,6 @@ module.exports = React.createClass({
     },
 
     _onChange: function (e) {
-        console.log("hook :: personalInfoEdit._onChange");
-
         this.setState({value: e.target.value});
     }
 

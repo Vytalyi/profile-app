@@ -21,7 +21,6 @@ var _data = {
 // todo... save data to server
 function save(data) {
     _data = data;
-    console.log("hook :: ProfileStore.save", data);
 }
 
 var ProfileStore = assign({}, EventEmitter.prototype, {
@@ -45,14 +44,18 @@ var ProfileStore = assign({}, EventEmitter.prototype, {
 
 // Register callback to handle all updates
 AppDispatcher.register(function (action) {
-
     switch (action.actionType) {
         case ActionTypes.PROFILE_SAVEINFO:
             save(action.data);
-            ProfileStore.emitChange();
             break;
+        default:
+            return true;
     }
 
+    // If some action matched - emit change event
+    ProfileStore.emitChange();
+
+    return true;
 });
 
 

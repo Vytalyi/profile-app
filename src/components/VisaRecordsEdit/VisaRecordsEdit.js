@@ -1,5 +1,5 @@
 var React = require('react'),
-    VisaRecordsItemEdit = require('./../VisaRecordsItemEdit/VisaRecordsItemEdit');
+    VisaRecordsItemEdit = require('../VisaRecordsItemEdit/VisaRecordsItemEdit');
 
 module.exports = React.createClass({
 
@@ -24,8 +24,6 @@ module.exports = React.createClass({
     },
 
     getData: function () {
-        console.log("hook :: visaRecordsEdit.getData");
-
         var rtnData = {items: []};
 
         for (var p in this.refs) {
@@ -38,8 +36,6 @@ module.exports = React.createClass({
     },
 
     render: function () {
-        console.log("hook :: visaRecordsEdit.render");
-
         return (
             <section className="profile-section-visa">
                 <h2>Visa Records</h2>

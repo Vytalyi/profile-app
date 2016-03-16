@@ -7,8 +7,6 @@ module.exports = React.createClass({
     },
 
     render: function () {
-        console.log("hook :: PersonalInfoView.render");
-
         return (
             <section className="profile-section-personal">
                 <h2>Personal Info</h2>
